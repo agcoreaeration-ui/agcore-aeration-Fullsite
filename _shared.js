@@ -53,8 +53,18 @@ function injectFooter() {
           <div class="footer-logo" style="display:flex;align-items:center;gap:10px;"><img src="images/AG_Core_Logo_Dots.PNG" alt="AG Core Logo" style="width:28px;height:28px;display:block;"><img src="images/AG_Core_Logo_Tr-Text.PNG" alt="AG Core Aeration" style="height:28px;width:auto;display:block;"></div>
           <p class="footer-desc">Professional lawn aeration and renovation services. Helping local lawns breathe, recover and thrive.</p>
           <div class="footer-social">
-            <a href="${AG.social.facebook}" class="social-btn">f</a>
-            <a href="${AG.social.instagram}" class="social-btn">ig</a>
+            <a href="${AG.social.facebook}" class="social-btn" target="_blank" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="${AG.social.instagram}" class="social-btn" target="_blank" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="4" stroke="#1E7B34" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="#1E7B34"/>
+              </svg>
+            </a>
           </div>
         </div>
         <div class="footer-col">
@@ -416,8 +426,8 @@ const SHARED_CSS = `
   .footer-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 0.95rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
   .footer-desc { font-size: 0.83rem; color: var(--dim); line-height: 1.7; margin-bottom: 18px; max-width: 260px; }
   .footer-social { display: flex; gap: 8px; }
-  .social-btn { width: 32px; height: 32px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: var(--dim); font-size: 0.72rem; font-weight: 700; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-  .social-btn:hover { border-color: var(--accent); color: var(--accent-light); }
+  .social-btn { width: 36px; height: 36px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: var(--dim); font-size: 0.72rem; font-weight: 700; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .social-btn:hover { border-color: var(--accent); background: rgba(30,123,52,0.1); }
   .footer-col { display: flex; flex-direction: column; gap: 9px; }
   .footer-col-title { font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); margin-bottom: 3px; }
   .footer-link { font-size: 0.83rem; color: var(--dim); text-decoration: none; transition: color 0.2s; cursor: default; }

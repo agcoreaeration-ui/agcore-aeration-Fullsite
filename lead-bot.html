@@ -271,18 +271,28 @@ OWNER_SUMMARY:
 [summary]`;
 
   try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages: [{ role: "user", content: prompt }] })
+    const res = await fetch('https://formspree.io/f/mdavvawd', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: `${firstName} ${lastName}`,
+        email: email,
+        phone: phone || 'Not provided',
+        service: jobType,
+        urgency: urgency,
+        message: desc || 'No additional details provided',
+        _subject: `New Quote Request — ${jobType} — ${firstName} ${lastName}`
+      })
     });
-    const data = await res.json();
-    const text = data.content?.[0]?.text || '';
-    const cm = text.match(/CUSTOMER_MESSAGE:\s*([\s\S]*?)(?=OWNER_SUMMARY:|$)/);
-    const om = text.match(/OWNER_SUMMARY:\s*([\s\S]*)$/);
-    document.getElementById('formPanel').style.display = 'none';
-    document.getElementById('successPanel').style.display = 'flex';
-    await typeText('followupText', cm ? cm[1].trim() : text);
-    document.getElementById('ownerSummary').textContent = om ? om[1].trim() : 'Summary unavailable.';
+    if (res.ok) {
+      document.getElementById('formPanel').style.display = 'none';
+      document.getElementById('successPanel').style.display = 'flex';
+      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch within the hour.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
+      await typeText('followupText', msg);
+      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up within the hour.`;
+    } else {
+      throw new Error('Submission failed');
+    }
   } catch(e) {
     alert('Something went wrong. Please try again.');
     btn.disabled = false;

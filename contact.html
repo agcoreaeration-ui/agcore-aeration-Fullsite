@@ -354,17 +354,29 @@ async function handleSubmit() {
   document.getElementById('btnText').textContent = 'Sending...';
   document.getElementById('spinner').style.display = 'block';
   document.getElementById('btnArrow').style.display = 'none';
-  const prompt = `You are an AI assistant for AG Core Aeration, a professional lawn aeration and care business.\n\nA new enquiry has arrived. Write TWO things:\n1. A warm, professional follow-up message to the customer. Address them by first name, reference their specific service and urgency, confirm receipt, say we'll be in touch within the hour. Under 120 words. Signed from "The AG Core Aeration Team".\n2. A brief internal lead summary for the business owner (3-4 lines): customer name & contact, service, urgency, lawn details, next action.\n\nLead:\n- Name: ${firstName} ${lastName}\n- Email: ${email}\n- Phone: ${phone || 'not provided'}\n- Service: ${jobType}\n- Urgency: ${urgency}\n- Details: ${desc || 'None'}\n\nFormat EXACTLY:\nCUSTOMER_MESSAGE:\n[message]\n\nOWNER_SUMMARY:\n[summary]`;
   try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:1000, messages:[{role:"user",content:prompt}] }) });
-    const data = await res.json();
-    const text = data.content?.[0]?.text || '';
-    const cm = text.match(/CUSTOMER_MESSAGE:\s*([\s\S]*?)(?=OWNER_SUMMARY:|$)/);
-    const om = text.match(/OWNER_SUMMARY:\s*([\s\S]*)$/);
-    document.getElementById('formPanel').style.display = 'none';
-    document.getElementById('successPanel').style.display = 'flex';
-    await typeText('followupText', cm ? cm[1].trim() : text);
-    document.getElementById('ownerSummary').textContent = om ? om[1].trim() : 'Summary unavailable.';
+    const res = await fetch('https://formspree.io/f/mdavvawd', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: `${firstName} ${lastName}`,
+        email: email,
+        phone: phone || 'Not provided',
+        service: jobType,
+        urgency: urgency,
+        message: desc || 'No additional details provided',
+        _subject: `New Quote Request — ${jobType} — ${firstName} ${lastName}`
+      })
+    });
+    if (res.ok) {
+      document.getElementById('formPanel').style.display = 'none';
+      document.getElementById('successPanel').style.display = 'flex';
+      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch within the hour.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
+      await typeText('followupText', msg);
+      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up within the hour.`;
+    } else {
+      throw new Error('Form submission failed');
+    }
   } catch(e) {
     alert('Something went wrong. Please try again or call us directly.');
     btn.disabled=false; document.getElementById('btnText').textContent='Send My Enquiry';
