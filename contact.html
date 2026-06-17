@@ -140,21 +140,59 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--white)
 </style>
 </head>
 <body style="background:#0A0A0A;color:#fff;">
-<nav class="site-nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);">
-  <div class="nav-inner" style="max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+<style>
+.inline-nav { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(10,10,10,0.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.08); }
+.inline-nav-inner { max-width:1100px; margin:0 auto; padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:64px; }
+.inline-nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.inline-nav-links { display:flex; align-items:center; gap:32px; }
+.inline-nav-links a { color:rgba(255,255,255,0.6); text-decoration:none; font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
+.inline-nav-links a.active { color:#2a9d47; }
+.inline-nav-links a:hover { color:#fff; }
+.inline-nav-cta { background:#1E7B34; color:#fff !important; padding:9px 20px; border-radius:7px; text-decoration:none; font-family:'Barlow Condensed',sans-serif; font-size:0.82rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap; }
+.inline-nav-cta:hover { background:#196A2C !important; }
+.inline-hamburger { display:none; background:none; border:1px solid rgba(255,255,255,0.15); border-radius:8px; color:#fff; font-size:18px; width:38px; height:38px; cursor:pointer; align-items:center; justify-content:center; }
+.inline-mobile-menu { display:none; flex-direction:column; gap:2px; padding:10px 20px 18px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(10,10,10,0.99); }
+.inline-mobile-menu.open { display:flex; }
+.inline-mobile-menu a { color:rgba(255,255,255,0.7); text-decoration:none; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:12px 14px; border-radius:8px; display:block; }
+.inline-mobile-menu a.active { color:#2a9d47; }
+.inline-mobile-menu a:hover { background:rgba(255,255,255,0.05); color:#fff; }
+.inline-mobile-cta { margin-top:8px; background:#1E7B34; color:#fff !important; border-radius:10px; padding:13px 20px; text-align:center; }
+@media (max-width:900px) {
+  .inline-nav-inner { padding:0 20px; }
+  .inline-nav-links { display:none; }
+  .inline-hamburger { display:flex; }
+}
+</style>
+<nav class="inline-nav">
+  <div class="inline-nav-inner">
+    <a href="index.html" class="inline-nav-logo">
       <img src="images/AG_Core_Logo_Dots.PNG" alt="AG Core Logo" style="width:28px;height:28px;">
       <img src="images/AG_Core_Logo_Tr-Text.PNG" alt="AG Core Aeration" style="height:32px;width:auto;display:block;">
     </a>
-    <div style="display:flex;align-items:center;gap:32px;">
-      <a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Home</a>
-      <a href="gallery.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Gallery</a>
-      <a href="contact.html" style="color:#2a9d47;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Contact</a>
-      <a href="contact.html" style="background:#1E7B34;color:#fff;padding:9px 20px;border-radius:7px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;">Get a Quote</a>
+    <div class="inline-nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="inline-nav-cta">Get a Quote</a>
     </div>
+    <button class="inline-hamburger" id="inlineHamburger" onclick="toggleInlineMenu()">☰</button>
+  </div>
+  <div class="inline-mobile-menu" id="inlineMobileMenu">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html" class="inline-mobile-cta">Get a Free Quote →</a>
   </div>
 </nav>
 <div id="site-nav" style="display:none;"></div>
+<script>
+function toggleInlineMenu() {
+  const menu = document.getElementById('inlineMobileMenu');
+  const btn = document.getElementById('inlineHamburger');
+  menu.classList.toggle('open');
+  btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+}
+</script>
 
 <section class="page-hero">
   <div class="container">
