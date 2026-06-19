@@ -146,11 +146,9 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--white)
       </div>
       <h1>Get Your<br>Free<br><em>Quote Today.</em></h1>
       <div class="divider"></div>
-      <p class="sub">Tell us about your lawn and we'll reply with a personalised quote — usually within the hour. No obligation, no hard sell.</p>
+      <p class="sub">Tell us about your lawn and we'll reply with a personalised quote — same day. No obligation, no hard sell.</p>
       <div class="stats">
         <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Lawns transformed locally</div></div>
-        <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Average customer rating</div></div>
-        <div class="stat"><div class="stat-num">&lt;1hr</div><div class="stat-label">Quote response time</div></div>
         <div class="stat"><div class="stat-num">Free</div><div class="stat-label">No-obligation assessment</div></div>
       </div>
       <div class="trust-row">
@@ -183,7 +181,6 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--white)
           <option>Core Aeration</option>
           <option>Lawn Scarification</option>
           <option>Overseeding</option>
-          <option>Lawn Treatment Programme</option>
           <option>Top Dressing</option>
           <option>Full Lawn Renovation</option>
           <option>Free Lawn Assessment</option>
@@ -248,7 +245,7 @@ A new enquiry has arrived. Write TWO things:
    - Address them by first name
    - Reference their specific service and urgency
    - Confirm we've received their enquiry
-   - For ASAP requests: say we'll call within the hour
+   - For ASAP requests: say we'll follow up same day
    - For others: say we'll be in touch same day
    - Be friendly, knowledgeable about lawn care, reassuring — under 120 words
    - Signed from "The AG Core Aeration Team"
@@ -287,9 +284,9 @@ OWNER_SUMMARY:
     if (res.ok) {
       document.getElementById('formPanel').style.display = 'none';
       document.getElementById('successPanel').style.display = 'flex';
-      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch within the hour.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
+      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch same day.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
       await typeText('followupText', msg);
-      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up within the hour.`;
+      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up same day.`;
     } else {
       throw new Error('Submission failed');
     }

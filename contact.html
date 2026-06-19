@@ -224,7 +224,19 @@ function toggleInlineMenu() {
           </div>
           <div class="info-item">
             <div class="info-icon">💬</div>
-            <div><div class="info-label">Facebook</div><div class="info-value"><a href="https://www.facebook.com/profile.php?id=61562326494902" target="_blank">Message us on Facebook</a></div></div>
+            <div>
+              <div class="info-label">Find Us Online</div>
+              <div class="info-value" style="display:flex;flex-direction:column;gap:6px;margin-top:4px;">
+                <a href="https://www.facebook.com/profile.php?id=61562326494902" target="_blank" style="display:flex;align-items:center;gap:8px;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Facebook
+                </a>
+                <a href="https://www.instagram.com/ag_core_aeration/" target="_blank" style="display:flex;align-items:center;gap:8px;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#1E7B34" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#1E7B34" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="#1E7B34"/></svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -267,7 +279,6 @@ function toggleInlineMenu() {
                 <option>Core Aeration</option>
                 <option>Lawn Scarification</option>
                 <option>Overseeding</option>
-                <option>Lawn Treatment Programme</option>
                 <option>Top Dressing</option>
                 <option>Full Lawn Renovation</option>
                 <option>Free Lawn Assessment</option>
@@ -371,9 +382,9 @@ async function handleSubmit() {
     if (res.ok) {
       document.getElementById('formPanel').style.display = 'none';
       document.getElementById('successPanel').style.display = 'flex';
-      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch within the hour.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
+      const msg = `Hi ${firstName},\n\nThanks for reaching out to AG Core Aeration! We've received your enquiry for ${jobType} and will be in touch same day.\n\nIf it's urgent, feel free to call or text us directly.\n\nCheers,\nThe AG Core Aeration Team`;
       await typeText('followupText', msg);
-      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up within the hour.`;
+      document.getElementById('ownerSummary').textContent = `Customer: ${firstName} ${lastName} | Email: ${email} | Phone: ${phone || 'not provided'}\nService: ${jobType} | Urgency: ${urgency}\nDetails: ${desc || 'None'}\nNext action: Follow up same day.`;
     } else {
       throw new Error('Form submission failed');
     }
