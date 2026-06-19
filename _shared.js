@@ -426,8 +426,8 @@ const SHARED_CSS = `
   .footer-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 0.95rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
   .footer-desc { font-size: 0.83rem; color: var(--dim); line-height: 1.7; margin-bottom: 18px; max-width: 260px; }
   .footer-social { display: flex; gap: 8px; }
-  .social-btn { width: 36px; height: 36px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: var(--dim); font-size: 0.72rem; font-weight: 700; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-  .social-btn:hover { border-color: var(--accent); background: rgba(30,123,52,0.1); }
+  .social-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 7px 14px; color: rgba(255,255,255,0.6); font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s, background 0.2s, color 0.2s; }
+  .social-btn:hover { border-color: var(--accent); background: rgba(30,123,52,0.1); color: #fff; }
   .footer-col { display: flex; flex-direction: column; gap: 9px; }
   .footer-col-title { font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); margin-bottom: 3px; }
   .footer-link { font-size: 0.83rem; color: var(--dim); text-decoration: none; transition: color 0.2s; cursor: default; }
