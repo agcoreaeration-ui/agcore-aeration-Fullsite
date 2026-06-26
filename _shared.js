@@ -54,16 +54,12 @@ function injectFooter() {
           <p class="footer-desc">Professional lawn aeration and renovation services. Helping local lawns breathe, recover and thrive.</p>
           <div class="footer-social">
             <a href="${AG.social.facebook}" class="social-btn" target="_blank" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Facebook
             </a>
             <a href="${AG.social.instagram}" class="social-btn" target="_blank" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="4" stroke="#1E7B34" stroke-width="2"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="#1E7B34"/>
-              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#1E7B34" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#1E7B34" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="#1E7B34"/></svg>
+              Instagram
             </a>
           </div>
         </div>
@@ -107,13 +103,13 @@ function injectChatBot() {
     { keywords: ["price","cost","charge","how much","quote","pricing","fee","expensive"], answer: "We offer **free, no-obligation quotes** for all services. Prices vary by lawn size and treatment — get in touch and we'll give you an exact quote, usually within 24 hours. 👍" },
     { keywords: ["aeration","aerating","core aeration","holes","spikes","plug","compacted"], answer: "**Core aeration** removes small plugs of compacted soil, letting air, water and nutrients reach deep into the root zone. It's the most impactful single treatment for most lawns — best done in autumn or spring. 🌿" },
     { keywords: ["scarify","thatch","moss","dethatch"], answer: "**Scarification** removes dead thatch and moss using specialist blades. It can look dramatic at first, but lawns bounce back within 4–6 weeks and come back much healthier. 🔄" },
-    { keywords: ["overseed","seed","bare","patchy","thin","bald"], answer: "We **overseed** after scarification or aeration to fill thin or bare patches with quality grass seed matched to your lawn. Germination typically takes 2–3 weeks. 🌱" },
-    { keywords: ["area","cover","location","travel","near","local","postcode"], answer: "We cover the local area and surrounding towns. Drop us your postcode via the contact form and we'll confirm — most enquiries get a same-day response. 📍" },
+    { keywords: ["overseed","seed","bare","patchy","thin","bald"], answer: "We can **overseed** after scarification or aeration to fill thin or bare patches with quality grass seed matched to your lawn. Germination typically takes 2–3 weeks. 🌱" },
+    { keywords: ["area","cover","location","travel","near","local","postcode"], answer: "We cover the local area and surrounding towns. Drop us your postcode via the contact form and we'll confirm — most enquiries get a response within 24 hours. 📍" },
     { keywords: ["hours","open","available","time","weekend","saturday","sunday"], answer: "Hours are flexible and by appointment only. Contact us today to find a time that works for you. ⏰" },
     { keywords: ["insured","insurance","certified","qualified","experience","guarantee"], answer: "We're **fully insured** and owner-operated — you deal directly with the person doing the work. All our work comes with a satisfaction guarantee. ✅" },
     { keywords: ["book","appointment","schedule","visit","arrange","slot"], answer: "You can book via our **quote form** on this page, by calling **0402 376 939**, or emailing **agcoreaeration@gmail.com**. Spring is our busy period and does book up quick, book early to lock in your spot. 📅" },
     { keywords: ["when","best time","season","spring","autumn","summer","winter"], answer: "The **best times for aeration and scarification** are **autumn (March–May)** and **spring (September–November)** when grass is actively growing and can recover quickly. We're available year-round for assessments and treatments. 🗓️" },
-    { keywords: ["payment","pay","cash","card","invoice","deposit"], answer: "We accept **bank transfer, card and cash**. We'll always give you a clear quote before any work starts — no surprises. 💳" },
+    { keywords: ["payment","pay","cash","card","invoice","deposit"], answer: "We accept **bank transfer and cash**. We'll always give you a clear quote before any work starts — no surprises. 💳" },
   ];
 
   const SUGGESTED = ["What is core aeration?", "How much does it cost?", "Best time of year?", "Do you cover my area?", "How do I book?"];
@@ -425,8 +421,8 @@ const SHARED_CSS = `
   .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px 44px; display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 44px; }
   .footer-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 0.95rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
   .footer-desc { font-size: 0.83rem; color: var(--dim); line-height: 1.7; margin-bottom: 18px; max-width: 260px; }
-  .footer-social { display: flex; gap: 8px; }
-  .social-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 7px 14px; color: rgba(255,255,255,0.6); font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s, background 0.2s, color 0.2s; }
+  .footer-social { display: flex; flex-direction: column; gap: 8px; }
+  .social-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 9px 16px; color: rgba(255,255,255,0.6); font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s, background 0.2s, color 0.2s; width: fit-content; }
   .social-btn:hover { border-color: var(--accent); background: rgba(30,123,52,0.1); color: #fff; }
   .footer-col { display: flex; flex-direction: column; gap: 9px; }
   .footer-col-title { font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmer); margin-bottom: 3px; }
