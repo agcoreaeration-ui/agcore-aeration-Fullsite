@@ -104,15 +104,15 @@ function injectChatBot() {
   if (document.getElementById('ag-chat-bubble')) return;
 
   const BOT_FAQS = [
-    { keywords: ["price","cost","charge","how much","quote","pricing","fee","expensive"], answer: "We offer **free, no-obligation quotes** for all services. Prices vary by lawn size and treatment — get in touch and we'll give you an exact quote, usually same day. 👍" },
+    { keywords: ["price","cost","charge","how much","quote","pricing","fee","expensive"], answer: "We offer **free, no-obligation quotes** for all services. Prices vary by lawn size and treatment — get in touch and we'll give you an exact quote, usually within 24 hours. 👍" },
     { keywords: ["aeration","aerating","core aeration","holes","spikes","plug","compacted"], answer: "**Core aeration** removes small plugs of compacted soil, letting air, water and nutrients reach deep into the root zone. It's the most impactful single treatment for most lawns — best done in autumn or spring. 🌿" },
-    { keywords: ["scarif","thatch","moss","dethatch"], answer: "**Scarification** removes dead thatch and moss using specialist blades. It can look dramatic at first, but lawns bounce back within 4–6 weeks and come back much healthier. 🔄" },
+    { keywords: ["scarify","thatch","moss","dethatch"], answer: "**Scarification** removes dead thatch and moss using specialist blades. It can look dramatic at first, but lawns bounce back within 4–6 weeks and come back much healthier. 🔄" },
     { keywords: ["overseed","seed","bare","patchy","thin","bald"], answer: "We **overseed** after scarification or aeration to fill thin or bare patches with quality grass seed matched to your lawn. Germination typically takes 2–3 weeks. 🌱" },
     { keywords: ["area","cover","location","travel","near","local","postcode"], answer: "We cover the local area and surrounding towns. Drop us your postcode via the contact form and we'll confirm — most enquiries get a same-day response. 📍" },
-    { keywords: ["hours","open","available","time","weekend","saturday","sunday"], answer: "We aim to respond same day to all enquiries. Get in touch via the contact page or give us a call and we'll get back to you! 📅" },
+    { keywords: ["hours","open","available","time","weekend","saturday","sunday"], answer: "Hours are flexible and by appointment only. Contact us today to find a time that works for you. ⏰" },
     { keywords: ["insured","insurance","certified","qualified","experience","guarantee"], answer: "We're **fully insured** and owner-operated — you deal directly with the person doing the work. All our work comes with a satisfaction guarantee. ✅" },
-    { keywords: ["book","appointment","schedule","visit","arrange","slot"], answer: `You can book via our **quote form** on the contact page, by calling **${AG.phone}**, or emailing **${AG.email}**. We'll get back to you same day. 📅` },
-    { keywords: ["when","best time","season","spring","autumn","summer","winter"], answer: "The **best times** for aeration and scarification are **autumn (Sept–Oct)** and **spring (March–April)** when grass is actively growing and recovers quickly. 🗓️" },
+    { keywords: ["book","appointment","schedule","visit","arrange","slot"], answer: "You can book via our **quote form** on this page, by calling **0402 376 939**, or emailing **agcoreaeration@gmail.com**. Spring is our busy period and does book up quick, book early to lock in your spot. 📅" },
+    { keywords: ["when","best time","season","spring","autumn","summer","winter"], answer: "The **best times for aeration and scarification** are **autumn (March–May)** and **spring (September–November)** when grass is actively growing and can recover quickly. We're available year-round for assessments and treatments. 🗓️" },
     { keywords: ["payment","pay","cash","card","invoice","deposit"], answer: "We accept **bank transfer, card and cash**. We'll always give you a clear quote before any work starts — no surprises. 💳" },
   ];
 
