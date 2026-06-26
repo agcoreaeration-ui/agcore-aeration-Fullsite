@@ -111,7 +111,7 @@ function injectChatBot() {
     { keywords: ["area","cover","location","travel","near","local","postcode"], answer: "We cover the local area and surrounding towns. Drop us your postcode via the contact form and we'll confirm — most enquiries get a same-day response. 📍" },
     { keywords: ["hours","open","available","time","weekend","saturday","sunday"], answer: "We aim to respond same day to all enquiries. Get in touch via the contact page or give us a call and we'll get back to you! 📅" },
     { keywords: ["insured","insurance","certified","qualified","experience","guarantee"], answer: "We're **fully insured** and owner-operated — you deal directly with the person doing the work. All our work comes with a satisfaction guarantee. ✅" },
-    { keywords: ["book","appointment","schedule","visit","arrange","slot"], answer: "You can book via our **quote form** on the contact page, by calling **${AG.phone}**, or emailing **${AG.email}**. We'll get back to you same day. 📅" },
+    { keywords: ["book","appointment","schedule","visit","arrange","slot"], answer: `You can book via our **quote form** on the contact page, by calling **${AG.phone}**, or emailing **${AG.email}**. We'll get back to you same day. 📅` },
     { keywords: ["when","best time","season","spring","autumn","summer","winter"], answer: "The **best times** for aeration and scarification are **autumn (Sept–Oct)** and **spring (March–April)** when grass is actively growing and recovers quickly. 🗓️" },
     { keywords: ["payment","pay","cash","card","invoice","deposit"], answer: "We accept **bank transfer, card and cash**. We'll always give you a clear quote before any work starts — no surprises. 💳" },
   ];
