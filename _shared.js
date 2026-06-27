@@ -51,7 +51,7 @@ function injectFooter() {
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-logo" style="display:flex;align-items:center;gap:10px;"><img src="images/AG_Core_Logo_Dots.PNG" alt="AG Core Logo" style="width:28px;height:28px;display:block;"><img src="images/AG_Core_Logo_Tr-Text.PNG" alt="AG Core Aeration" style="height:28px;width:auto;display:block;"></div>
-          <p class="footer-desc">Professional lawn aeration and renovation services. Helping local lawns breathe, recover and thrive.</p>
+          <p class="footer-desc">Lawn aeration and renovation services. Helping local lawns breathe, recover and thrive.</p>
           <div class="footer-social">
             <a href="${AG.social.facebook}" class="social-btn" target="_blank" aria-label="Facebook">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="#1E7B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -74,7 +74,6 @@ function injectFooter() {
           <span class="footer-link">Core Aeration</span>
           <span class="footer-link">Lawn Scarification</span>
           <span class="footer-link">Overseeding</span>
-          <span class="footer-link">Lawn Treatment</span>
           <span class="footer-link">Top Dressing</span>
         </div>
         <div class="footer-col">
